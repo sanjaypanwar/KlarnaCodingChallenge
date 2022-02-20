@@ -3,7 +3,7 @@ package com.example.klarnacodingchallenge.data.repository
 import com.example.klarnacodingchallenge.data.datasource.WeatherRemoteDataSource
 import com.example.klarnacodingchallenge.domain.DataHolder
 import com.example.klarnacodingchallenge.domain.WeatherPresenterData
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.map
@@ -14,6 +14,7 @@ import kotlinx.coroutines.flow.map
 class WeatherRepository(
     private val dataSource: WeatherRemoteDataSource,
     private val weatherDataMapper: WeatherDataMapper,
+    private val coroutineDispatcher: CoroutineDispatcher,
 ) : ApiResponseMapper(), IWeatherRepository {
     override fun getWeatherForGeoLocation(
         lat: Double,
@@ -28,5 +29,5 @@ class WeatherRepository(
                     DataHolder.Fail(it.error, null)
                 }
             }
-        }.flowOn(Dispatchers.IO)
+        }.flowOn(coroutineDispatcher)
 }
