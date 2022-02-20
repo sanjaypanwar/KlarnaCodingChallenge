@@ -9,7 +9,7 @@ import kotlinx.parcelize.Parcelize
  */
 @Parcelize
 data class WeatherInfoData(
-    val time: Int = Int.MIN_VALUE,
+    val time: Long = Long.MIN_VALUE,
     val summary: String = EMPTY,
     val icon: String = EMPTY,
     val precipIntensity: Int = Int.MIN_VALUE,

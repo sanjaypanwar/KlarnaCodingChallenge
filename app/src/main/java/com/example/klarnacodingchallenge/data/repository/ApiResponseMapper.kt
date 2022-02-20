@@ -9,7 +9,7 @@ import retrofit2.Response
  * Abstract class to give capabilities to child class of Encapsulating and handle checks for data
  * returned from API call.
  */
-abstract class ApiResponse {
+abstract class ApiResponseMapper {
     fun <T> safeApiCall(apiCall: () -> Flow<Response<T>>): Flow<DataHolder<T>> {
         return apiCall().map {
             try {

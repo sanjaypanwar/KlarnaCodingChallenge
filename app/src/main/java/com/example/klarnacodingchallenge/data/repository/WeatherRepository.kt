@@ -14,12 +14,12 @@ import kotlinx.coroutines.flow.map
 class WeatherRepository(
     private val dataSource: WeatherRemoteDataSource,
     private val weatherDataMapper: WeatherDataMapper,
-) : ApiResponse(), IWeatherRepository {
+) : ApiResponseMapper(), IWeatherRepository {
     override fun getWeatherForGeoLocation(
         lat: Double,
         lng: Double
     ): Flow<DataHolder<WeatherPresenterData>> =
-        safeApiCall { dataSource.getWeatherData() }.map {
+        safeApiCall { dataSource.getWeatherData(lat, lng) }.map {
             when (it) {
                 is DataHolder.Success -> {
                     DataHolder.Success(weatherDataMapper.mapWeatherAPIData(it.data))
