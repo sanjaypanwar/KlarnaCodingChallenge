@@ -28,6 +28,9 @@ class WeatherRepository(
                 is DataHolder.Fail -> {
                     DataHolder.Fail(it.error, null)
                 }
+                is DataHolder.Loading -> {
+                    DataHolder.Loading(null)
+                }
             }
         }.flowOn(coroutineDispatcher)
 }
