@@ -15,11 +15,14 @@ abstract class ApiResponseMapper {
             try {
                 if (it.isSuccessful) {
                     val body = it.body()
-                    body?.let {
+                    if (body != null) {
                         DataHolder.Success(body)
+                    } else {
+                        error("${it.code()} ${it.message()}")
                     }
+                } else {
+                    error("${it.code()} ${it.message()}")
                 }
-                error("${it.code()} ${it.message()}")
             } catch (e: Exception) {
                 error(e.message ?: e.toString())
             }

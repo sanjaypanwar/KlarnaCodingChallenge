@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/rootView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView"
+            android:layout_width="@dimen/day_item_width"
+            android:layout_height="@dimen/day_item_height"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:layout_marginBottom="@dimen/dp_40"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="24dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textViewTimeOfDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/sp_24"
+                    android:textColor="@color/white"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    tools:text="12:00" />
+
+                <TextView
+                    android:id="@+id/textViewDayOfWeek"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textViewTimeOfDay"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:text="Monday" />
+
+                <ImageView
+                    android:id="@+id/imageViewWeatherIcon"
+                    android:layout_width="@dimen/dp_56"
+                    android:layout_height="56dp"
+                    android:layout_below="@id/textViewDayOfWeek"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="12dp"
+                    tools:src="@drawable/snow" />
+
+                <TextView
+                    android:id="@+id/textViewTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageViewWeatherIcon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:textColor="@color/white"
+                    android:textSize="26sp"
+                    android:textStyle="bold"
+                    tools:text="23°" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutTempMaxMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textViewTemp"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textViewMinTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/dp_12"
+                        android:textColor="@color/HalfOpacity"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        tools:text="24°" />
+
+                    <TextView
+                        android:id="@+id/textViewMaxTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_12"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        tools:text="56°" />
+                </LinearLayout>
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </RelativeLayout>
+</layout>

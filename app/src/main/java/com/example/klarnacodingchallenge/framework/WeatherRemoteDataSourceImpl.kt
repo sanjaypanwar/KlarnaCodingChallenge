@@ -16,6 +16,7 @@ class WeatherRemoteDataSourceImpl(
     WeatherRemoteDataSource {
     override fun getWeatherData(lat: Double, lng: Double): Flow<Response<WeatherInfoApiResponse>> =
         flow {
-            emit(weatherServiceApi.getWeather(lat, lng))
+            val response = weatherServiceApi.getWeather(lat, lng)
+            emit(response)
         }.flowOn(coroutineDispatcher)
 }

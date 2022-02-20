@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.example.klarnacodingchallenge.viewmodel.WeatherViewModel" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#03DAC5"
+        android:fitsSystemWindows="true"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="8dp"
+        tools:visibility="invisible">
+
+        <RelativeLayout
+            android:id="@+id/rootView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageViewWeatherIcon"
+                android:layout_width="124dp"
+                android:layout_height="124dp"
+                android:layout_marginStart="@dimen/dp_36"
+                android:layout_marginTop="@dimen/dp_48"
+                tools:src="@drawable/clear_day" />
+
+            <TextView
+                android:id="@+id/textViewTemperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_48"
+                android:layout_marginEnd="@dimen/dp_36"
+                android:layout_toEndOf="@+id/imageViewWeatherIcon"
+                android:textColor="@color/white"
+                android:textSize="100sp"
+                tools:text="25°" />
+
+            <TextView
+                android:id="@+id/textViewWeatherMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewTemperature"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_8"
+                android:textColor="@color/white"
+                android:textSize="23sp"
+                tools:text="Clouds &amp; Sun" />
+
+            <TextView
+                android:id="@+id/textViewHumidityHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewWeatherMain"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="@string/humidity"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textViewHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewHumidityHeader"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/dp_24"
+                android:textColor="@color/white"
+                android:textSize="27sp"
+                tools:text="35°" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardViewHourOfDayContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textViewHumidity"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/dp_24"
+                android:layout_marginTop="@dimen/dp_24"
+                android:layout_marginEnd="@dimen/dp_24"
+                android:layout_marginBottom="64dp"
+                app:cardCornerRadius="@dimen/dp_24">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewHourOfDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_16"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_weather_hour_of_day" />
+            </com.google.android.material.card.MaterialCardView>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

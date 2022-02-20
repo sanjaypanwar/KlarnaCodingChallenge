@@ -37,8 +37,9 @@ class DataModule {
     @Provides
     @Singleton
     fun providesWeatherDataSource(
-        weatherServiceApi: WeatherServiceApi
-    ): WeatherRemoteDataSource = WeatherRemoteDataSourceImpl(weatherServiceApi)
+        weatherServiceApi: WeatherServiceApi,
+        coroutineDispatcher: CoroutineDispatcher
+    ): WeatherRemoteDataSource = WeatherRemoteDataSourceImpl(weatherServiceApi, coroutineDispatcher)
 
     /**
      * Data source implementation for getting weather data

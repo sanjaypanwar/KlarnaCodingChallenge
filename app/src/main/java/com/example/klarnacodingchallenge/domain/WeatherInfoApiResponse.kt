@@ -2,6 +2,7 @@ package com.example.klarnacodingchallenge.domain
 
 import android.os.Parcelable
 import com.example.klarnacodingchallenge.util.Constants.EMPTY
+import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 /**
@@ -9,11 +10,10 @@ import kotlinx.parcelize.Parcelize
  */
 @Parcelize
 data class WeatherInfoApiResponse(
-    val latitude: Double = Double.MAX_VALUE,
-    val longitude: Double = Double.MIN_VALUE,
-    val timezone: String = EMPTY,
-    val currently: WeatherInfoData,
-    val hourly: HourlyWeatherInfo,
-    val daily: DailyWeatherInfo,
-    val offset: Int
+    @SerializedName("latitude") val latitude: Double? = Double.MAX_VALUE,
+    @SerializedName("longitude") val longitude: Double? = Double.MIN_VALUE,
+    @SerializedName("timezone") val timezone: String? = EMPTY,
+    @SerializedName("currently") val currently: WeatherInfoData? = WeatherInfoData(),
+    @SerializedName("hourly") val hourly: HourlyWeatherInfo? = HourlyWeatherInfo(),
+    @SerializedName("daily") val daily: DailyWeatherInfo? = DailyWeatherInfo(),
 ) : Parcelable

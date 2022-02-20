@@ -1,7 +1,8 @@
 package com.example.klarnacodingchallenge.domain
 
 import android.os.Parcelable
-import com.example.klarnacodingchallenge.util.Constants
+import com.example.klarnacodingchallenge.util.Constants.EMPTY
+import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 /**
@@ -9,7 +10,7 @@ import kotlinx.parcelize.Parcelize
  */
 @Parcelize
 data class DailyWeatherInfo(
-    val summary: String = Constants.EMPTY,
-    val icon: String = Constants.EMPTY,
-    val data: List<WeatherInfoDataDaily> = listOf()
+    @SerializedName("summary") var summary: String? = EMPTY,
+    @SerializedName("icon") var icon: String? = EMPTY,
+    @SerializedName("data") var data: ArrayList<WeatherInfoDataDaily> = arrayListOf()
 ) : Parcelable
