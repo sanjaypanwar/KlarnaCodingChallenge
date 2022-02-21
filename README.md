@@ -21,7 +21,13 @@ Contains the repository and data source classes.
 - WeatherActivity : its the single activity showing the weather data to user on launch.
 Location permission model is implemented to check if user has granted permission to user and request for permission if not.
 
-https://user-images.githubusercontent.com/10473282/154895211-a5102b64-862e-4898-a899-0e4653aa2372.mp4
+https://user-images.githubusercontent.com/10473282/154896046-82ef38f5-3ef1-416b-b1bb-4cb0a3047c8e.mp4
+
+
+
+https://user-images.githubusercontent.com/10473282/154896165-03ec19ca-d9dd-4a26-9301-175aa7ec1b0d.mp4
+
+
 
 ## for Dependecy injection :
 - NetworkModule : for providing dependencies related to the retrofit.
