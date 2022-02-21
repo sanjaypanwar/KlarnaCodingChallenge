@@ -2,8 +2,8 @@
 ## Task description : Create a simple app which displays the weather for the users' location.
 
 # Planning:
-My main focus was to implement the business logic and the UI of the funtionality.
-I decided to plan for the methods we are going to required in repository class in data layer where we write the bussiness logic.
+My main focus was to implement the clean architecture and the UI of the funtionality.
+I decided to plan for the data classes we require to provide to UI and repository class in data layer where we write the bussiness logic.
 First worked on the domain layer containing the model classes for the WeatherAPI data also added models to represent on the UI.
 ## Domain models I added:
 ### For api response:
