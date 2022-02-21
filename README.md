@@ -21,14 +21,16 @@ Contains the repository and data source classes.
 - WeatherActivity : its the single activity showing the weather data to user on launch.
 Location permission model is implemented to check if user has granted permission to user and request for permission if not.
 
+https://user-images.githubusercontent.com/10473282/154895211-a5102b64-862e-4898-a899-0e4653aa2372.mp4
 
 ## for Dependecy injection :
 - NetworkModule : for providing dependencies related to the retrofit.
 - DataModule : for providing dependencies related to the repositories and usecases .
 
 # Architecture: 
-Followed the clean architecture with MVVM:
-![1_VhRdBj1kXY3fwXDEDxoykg](https://user-images.githubusercontent.com/10473282/153204090-096426d1-c36c-49fa-9f01-07cdeb25047d.png)
+## CLean Architecture with MVVM
+For architecture, I have decided to implement the feature with clean architecture with MVVM:
+![clean](https://user-images.githubusercontent.com/10473282/152679625-d15e6b5c-a2ff-4b00-9737-655d20e3fcae.png)
 
 # Libraries added
 
